@@ -6,4 +6,8 @@ block content
   p Due: #{goal.due_date}
   p #{goal.status ? 'Completed' : 'Not completed'}
 
+  form(action=`/goals/${goal._id}/delete` method="POST")
+    button(type="submit" class="btn btn-danger") Delete
+
+
   a(href="/") Back to goals

@@ -3,11 +3,12 @@ const goals = require("../models/goals");
 // Search DB for all goals
 exports.goal_list = function (req, res, next) {
     goals.find({}, "goal due_date date_created is_completed")
+    .sort([["due_date", "ascending"]])
     .exec(function (err, result) {
             if (err) {
                 return next(err);
             }
-            res.render("index", { title: "Goals", goals: result });
+            res.render("index", { title: "Life Goals", goals: result });
         });
 }
 

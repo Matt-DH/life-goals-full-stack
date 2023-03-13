@@ -8,8 +8,8 @@ block content
             div(class="goal")
                 a(href=goal.url) #{goal.goal}
                 |  (End date: #{goal.due_date.toDateString()})
-    button(class="new-goal")
-        a(href="/create") Create Goal
+    
+    a(href="/create") Create Goal
 
 
     form(method="POST" action="/")

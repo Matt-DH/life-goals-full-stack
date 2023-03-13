@@ -1,15 +1,19 @@
-/* body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
-} */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  margin: 2rem auto;
+  width: 95%;
+}
 
 .goals {
   display: flex;
   flex-direction: column;
+  margin: 2rem 0;
 }
 
 a {
