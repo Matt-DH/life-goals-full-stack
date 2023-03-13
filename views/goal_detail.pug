@@ -1,0 +1,9 @@
+extend layout 
+
+block content
+  h1= goal.goal
+  p Created: #{goal.date_created}
+  p Due: #{goal.due_date}
+  p #{goal.status ? 'Completed' : 'Not completed'}
+
+  a(href="/") Back to goals
