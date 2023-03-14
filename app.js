@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var dotenv = require('dotenv');
 var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
@@ -11,6 +10,7 @@ var indexRouter = require('./routes/index');
 var app = express();
 
 // dotenv config
+var dotenv = require('dotenv');
 dotenv.config();
 // console.log(process.env.MONGO_URI);
 
