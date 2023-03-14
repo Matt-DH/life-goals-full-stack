@@ -9,10 +9,10 @@
 
     **Example**
     ```
-    MONGO_URI=mongodb+srv://USERNAME:PASSWORD@myatlasclusteredu.dww5zpx.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority
+    MONGO_URI=mongodb+srv://USERNAME:PASSWORD@myatlasclusteredu.dww5zpx.mongodb.net/DATABASE?retryWrites=true&w=majority
     ```
 
-    Replace username, password, and database name with your own credentials from mongoDB Atlas
+    Replace username, password, and database with your own credentials from [mongoDB Atlas](https://www.mongodb.com/atlas/database)
 
 4. [*Optional*] Run `populate_test_data.js` if you want test data inserted into your DB.
 5. While in the project directory, run the development server: `npm run dev`
