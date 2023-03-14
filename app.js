@@ -4,15 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var dotenv = require('dotenv');
 
+// use this file to define all the routes of the application
 var indexRouter = require('./routes/index');
 
 var app = express();
 
 // dotenv config
-var dotenv = require('dotenv');
 dotenv.config();
-// console.log(process.env.MONGO_URI);
 
 // Set up mongoose connection
 mongoose.set('strictQuery', false);
@@ -34,7 +34,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/create', indexRouter);
+// app.use('/create', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

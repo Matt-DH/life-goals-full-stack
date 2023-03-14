@@ -1,3 +1,9 @@
+// This file contains the controller functions. 
+// 1. If the route is /, the goal_list function is called.
+// 2. If the route is /goals/:id, the goal_detail function is called. 
+// 3. If the route is /create, the goal_create_get function is called. 
+// 4. If the route is /goals/:id/delete, the delete_goal function is called.
+
 const goals = require("../models/goals");
 
 // Search DB for all goals
@@ -23,10 +29,12 @@ exports.goal_detail = function (req, res, next) {
     });
 }
 
+// Display the create goal form
 exports.goal_create_get = function (req, res, next) {
     res.render("create", { title: "New Goal" });
 }
 
+// Create a new goal from data in the request body (which comes from our form elements) and save it to the DB
 exports.create_goal = function (req, res, next) {
     let goal = new goals({
         goal: req.body.goal,
@@ -41,6 +49,7 @@ exports.create_goal = function (req, res, next) {
     });
 }
 
+// Delete a goal from the DB. This triggers on a POST request from the goal_detail page.
 exports.delete_goal = function (req, res, next) {
     goals.findByIdAndRemove(req.params.id, function deleteGoal(err) {
         if (err) {
@@ -51,8 +60,6 @@ exports.delete_goal = function (req, res, next) {
 }
 
 
-
-// const async = require("async");
 
 // Count number of goals in DB
 

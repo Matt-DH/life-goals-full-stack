@@ -1,3 +1,5 @@
+// This file contains all of the routes for the application. It is required in app.js and used to define all the routes of the application.
+
 var express = require('express');
 var router = express.Router();
 
