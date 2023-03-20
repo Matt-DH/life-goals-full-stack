@@ -2,8 +2,8 @@ extend layout
 
 block content
   h1= goal.goal
-  p Created: #{goal.date_created}
-  p Due: #{goal.due_date}
+  p Created: #{goal.date_created.toDateString()}
+  p Due: #{goal.due_date.toDateString()}
   p #{goal.is_completed ? 'Completed' : 'Not completed'}
 
   form(action=`/goals/${goal._id}/markcomplete` method="POST")
