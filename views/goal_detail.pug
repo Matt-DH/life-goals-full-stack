@@ -4,10 +4,14 @@ block content
   h1= goal.goal
   p Created: #{goal.date_created}
   p Due: #{goal.due_date}
-  p #{goal.status ? 'Completed' : 'Not completed'}
+  p #{goal.is_completed ? 'Completed' : 'Not completed'}
 
+  form(action=`/goals/${goal._id}/markcomplete` method="POST")
+    button(type="submit") Mark complete
+  form(action=`/goals/${goal._id}/markincomplete` method="POST")
+    button(type="submit") Mark incomplete
+  br
   form(action=`/goals/${goal._id}/delete` method="POST")
     button(type="submit" class="btn btn-danger") Delete
-
 
   a(href="/") Back to goals

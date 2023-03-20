@@ -9,7 +9,10 @@ dotenv.config();
 // Connect to the MongoDB database
 main().catch(err => console.log(err));
 async function main() {
+  console.log("AWAITING MONGOOSE CONNNECTION");
+  console.log("CONNECTION STRING: " + process.env.MONGO_URI);
   await mongoose.connect(process.env.MONGO_URI);
+  console.log("SUCCESFULLY CONNECTED");
 }
 
 // Create some dummy users and life goals

@@ -19,7 +19,13 @@ router.get("/create", goal_controller.goal_create_get);
 /* POST create goal page. */
 router.post("/create", goal_controller.create_goal);
 
-// POST request to delete Post.
+/* POST request to update goal completion status to true */
+router.post("/goals/:id/markcomplete", goal_controller.markcomplete_goal);
+
+/* POST request to update goal completion status to false */
+router.post("/goals/:id/markincomplete", goal_controller.markincomplete_goal);
+
+/* POST request to delete Post. */
 router.post("/goals/:id/delete", goal_controller.delete_goal);
 
 module.exports = router;

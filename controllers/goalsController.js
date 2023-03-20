@@ -49,6 +49,29 @@ exports.create_goal = function (req, res, next) {
     });
 }
 
+// Mark goal complete
+exports.markcomplete_goal = function (req, res, next) {
+    goals.findByIdAndUpdate(req.params.id, { is_completed: true }, function (err, docs) {
+        if (err) {
+            return next(err);
+        } else {
+            res.redirect("/")
+        }
+    })
+};
+
+// Mark goal incomplete
+exports.markincomplete_goal = function (req, res, next) {
+    goals.findByIdAndUpdate(req.params.id, { is_completed: false }, function (err, docs) {
+        if (err) {
+            return next(err);
+        } else {
+            res.redirect("/")
+        }
+    })
+};
+
+
 // Delete a goal from the DB. This triggers on a POST request from the goal_detail page.
 exports.delete_goal = function (req, res, next) {
     goals.findByIdAndRemove(req.params.id, function deleteGoal(err) {
