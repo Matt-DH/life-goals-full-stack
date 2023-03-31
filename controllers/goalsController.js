@@ -82,8 +82,6 @@ exports.delete_goal = function (req, res, next) {
     });
 }
 
-
-
 // Count number of goals in DB
 
 // exports.goals_count = function (req, res, next) {
